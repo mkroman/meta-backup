@@ -6,4 +6,9 @@ MAINTAINER Mikkel Kroman <mk@maero.dk>
 
 RUN apk add restic
 
-ENTRYPOINT crond -f
+COPY init.sh /init.sh
+COPY create-backup.sh /etc/periodic/15min/create-backup
+
+RUN chmod 755 /init.sh /etc/periodic/15min/create-backup
+
+ENTRYPOINT /init.sh
