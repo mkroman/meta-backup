@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Authenticate to Docker registry
           command: |
-            echo "${DOCKER_PASS}" | docker login --username "${DOCKER_USER}" --password-stdin "${DOCKER_USER}"
+            echo "${DOCKER_PASS}" | docker login --username "${DOCKER_USER}" --password-stdin
       - run:
           name: Build Docker image
           command: |
