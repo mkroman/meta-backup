@@ -4,7 +4,7 @@
 FROM alpine:3.10.2
 MAINTAINER Mikkel Kroman <mk@maero.dk>
 
-RUN apk add restic
+RUN apk add restic ca-certificates
 
 COPY init.sh /init.sh
 COPY create-backup.sh /etc/periodic/15min/create-backup
